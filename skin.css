@@ -45,36 +45,36 @@
     animation-play-state: paused;
 }
 
-.nav {
+nav {
     border-width: 1px;
     border-color: black transparent black transparent;
     border-style: solid;
     overflow: hidden;
     padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
 }
 
-.logo {
+nav img {
     width: 100px;
     height: 30px;
-    display: inline-block;
-    position: absolute;
-    top: 55px;
     cursor: pointer;
 }
 
 .navlinks {
     text-align: right;
-    /* width: 100%; */
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
-    justify-content: right;
-    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 210px;
 }
 
 .navlinks a {
     color: black;
     text-decoration: none;
-    padding-left: 210px;
 }
 
 .cats {
@@ -244,23 +244,14 @@
     animation-play-state: paused;
 }
 
-.la ul li {
-    display: inline-block;
-    height: 411.38px;
-    width: 20%;
+.latestArrivals {
+    display: flex;
+}
+
+.latestArrival {
     border-color: black black black transparent;
     border-width: 1px;
     border-style: solid;
-}
-
-.la ul {
-    display: flex;
-    padding: 0px;
-    left: 0%;
-    width: 100%;
-    cursor: pointer;
-    margin: 0px;
-
 }
 
 .lapic1,
@@ -272,7 +263,6 @@
     background-size: contain;
     overflow: hidden;
     cursor: pointer;
-
 }
 
 .lapic1:hover,
@@ -284,11 +274,7 @@
     opacity: 1;
 }
 
-.la1:hover,
-.la2:hover,
-.la3:hover,
-.la4:hover,
-.la5:hover {
+.nikeDunks :hover {
 
     color: rgb(98 60 234);
 }
@@ -319,9 +305,6 @@
     text-wrap: wrap;
     text-align: right;
     margin: 0px;
-    /* padding-left: 9px; */
-
-
 }
 
 .lapic1,
@@ -333,7 +316,7 @@
     background-size: contain;
     overflow: hidden;
     cursor: pointer;
-
+    background-repeat: no-repeat;
 }
 
 .lapic1 {
@@ -380,6 +363,18 @@
     margin: 0px;
     font-size: 60px;
     padding: 36px 18px 18px 18px;
+    border: 1px solid;
+    border-color: black transparent black transparent;
+}
+
+.nikeDunks {
+    display: flex;
+}
+
+.nikeDunks div {
+    border: 1px solid;
+    border-color: transparent black transparent transparent;
+
 }
 
 .ad {
@@ -518,7 +513,7 @@
     background-size: contain;
 }
 
-.lasec ul {
+.slidershow ul {
     display: flex;
     padding: 0px;
     left: 0%;
@@ -529,7 +524,7 @@
 
 }
 
-.lasec ul li {
+.slidershow ul li {
     /* display: inline-block; */
     height: 441px;
     /* width: 20%; */

@@ -108,12 +108,76 @@ export let popular = [{
     style: 'VNOVFB9QS'
 }];
 
-console.log(popular);
+let latestArrivals = [{
+    id: 1,
+    title: 'New Balance 990V6 Action Bronson Lapis Lazuli',
+    priceCents: 58000
+}, {
+    id: 2,
+    title: 'New Balance 2002R Ssense Corduroy',
+    priceCents: 52000
+}, {
+    id: 3,
+    title: 'Air Jordan 1 Low Wmns Ice Blue',
+    priceCents: 40000
+}, {
+    id: 4,
+    title: 'Vans Authentic Pro Supreme Checkers Red',
+    priceCents: 80000
+}, {
+    id: 5,
+    title: "Nike Sb Dunk Low Ben & Jerry's Chunky Dunky",
+    priceCents: 240000
+}]
 
-function generatePopularHTML() {
-    let popularHTML = ``;
-    popular.forEach((item) => {
-        popularHTML += `
+let nikeDunks = [{
+    id: 1,
+    title: "Nike Air More Uptempo Supreme Gold",
+    priceCents: 52000
+}, {
+    id: 2,
+    title: "Nike Blazer Mid Sacai White Grey",
+    priceCents: 155000
+}, {
+    id: 3,
+    title: "Nike Air Force 1 Low Clot Fragment Black Silk",
+    priceCents: 81000
+}, {
+    id: 4,
+    title: "Nike Dubnk Low Jackie Robinson",
+    priceCents: 76000
+}, {
+    id: 5,
+    title: "Nike Dunk Low Wmns Next Nature Mint",
+    priceCents: 29000
+}];
+
+function generateHTML(elemntClass, array, elemntFunction) {
+    let HTML = ``;
+    array.forEach((item) => {
+        HTML += elemntFunction(item);
+    });
+    document.querySelector(elemntClass).innerHTML = HTML;
+}
+const nikeDunksHTML = (item) => `
+    <div>
+      <div class="nkpic${item.id}"></div>
+      <div class="ladata">
+        <p class="latitle">${item.title}</p>
+        <p class="laprice">$${(item.priceCents)/100}</p>
+      </div>
+    </div>
+`
+const latestArrivalsHTML = (item) => `
+    <div class="la1 latestArrival">
+      <div class="lapic${item.id}"></div>
+      <div class="ladata">
+        <p class="latitle">${item.title}</p>
+        <p class="laprice">$${item.priceCents/100}</p>
+      </div>
+    </div>
+`;
+const popularHTML = (item) => `
     <div class="popularLine popi${item.id}">
         <div class="pop${item.id}"></div>
         <p class="ptitle">${item.title}</p>
@@ -121,10 +185,8 @@ function generatePopularHTML() {
         <p>${item.brand}</p>
         <p>$ ${((Number(item.priceCents))/100)}</p>
       </div>
-        `;
-    })
-    document.querySelector('.list').innerHTML = popularHTML;
-}
+        `
 
-generatePopularHTML()
-// ptitle
+generateHTML('.latestArrivals', latestArrivals, latestArrivalsHTML);
+generateHTML('.list', popular, popularHTML);
+generateHTML('.nikeDunks', nikeDunks, nikeDunksHTML)
