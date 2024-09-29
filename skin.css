@@ -376,13 +376,10 @@
     background-image: url(media/latest-arrivals/5b.png);
 }
 
-.Popular {
+.section {
     margin: 0px;
     font-size: 60px;
     padding: 36px 18px 18px 18px;
-    /* padding-left: 20px;
-    padding-top: 30px;
-    padding-bottom: 16px; */
 }
 
 .ad {
@@ -398,47 +395,8 @@
 }
 
 .list {
-    list-style: none;
     padding: 0px 0px 0px 0px;
     margin: 0px;
-}
-
-.pop-title,
-.pop-style,
-.pop-vendor,
-.pop-price {
-    display: inline-block;
-}
-
-
-
-.pop-title {
-    width: 770px;
-    text-align: left;
-}
-
-.pop-style {
-    width: 240px;
-    text-align: left;
-}
-
-.pop-vendor {
-    width: 282px;
-    text-align: left;
-}
-
-.pop-price {
-    width: 130px;
-    text-align: right;
-}
-
-.ptitle,
-.pstyle,
-.pvendor,
-.pprice {
-    padding: 9px 18px 9px 18px;
-    margin: 0px;
-
 }
 
 .scrollbar2 {
@@ -916,26 +874,25 @@
     border-color: transparent transparent rgb(98 60 234) transparent;
 }
 
-/* EXP */
-
-.popimg2,
-.popimg3,
-.popimg4,
-.popimg5,
-.popimg6,
-.popimg7,
-.popimg8,
-.popimg9,
-.popimg10,
-.popimg11,
-.popimg12,
-.popimg13,
-.popimg14,
-.popimg15,
-.popimg16,
-.popimg17,
-.popimg18,
-.popimg19 {
+.pop1,
+.pop2,
+.pop3,
+.pop4,
+.pop5,
+.pop6,
+.pop7,
+.pop8,
+.pop9,
+.pop10,
+.pop11,
+.pop12,
+.pop13,
+.pop14,
+.pop15,
+.pop16,
+.pop17,
+.pop18,
+.pop19 {
     width: calc(100vw/3);
     height: 500px;
     pointer-events: none;
@@ -949,55 +906,42 @@
     opacity: .0;
 }
 
-.popi2:hover .popimg2,
-.popi3:hover .popimg3,
-.popi4:hover .popimg4,
-.popi5:hover .popimg5,
-.popi6:hover .popimg6,
-.popi7:hover .popimg7,
-.popi8:hover .popimg8,
-.popi9:hover .popimg9,
-.popi10:hover .popimg10,
-.popi11:hover .popimg11,
-.popi12:hover .popimg12,
-.popi13:hover .popimg13,
-.popi14:hover .popimg14,
-.popi15:hover .popimg15,
-.popi16:hover .popimg16,
-.popi17:hover .popimg17,
-.popi18:hover .popimg18,
-.popi19:hover .popimg19 {
+.popi1:hover .pop2,
+.popi3:hover .pop3,
+.popi4:hover .pop4,
+.popi5:hover .pop5,
+.popi6:hover .pop6,
+.popi7:hover .pop7,
+.popi8:hover .pop8,
+.popi9:hover .pop9,
+.popi10:hover .pop10,
+.popi11:hover .pop11,
+.popi12:hover .pop12,
+.popi13:hover .pop13,
+.popi14:hover .pop14,
+.popi15:hover .pop15,
+.popi16:hover .pop16,
+.popi17:hover .pop17,
+.popi18:hover .pop18,
+.popi19:hover .pop19 {
     transition: all .2s ease;
     opacity: 1;
 }
 
-.popi,
-.popi2,
-.popi3,
-.popi4,
-.popi5,
-.popi6,
-.popi7,
-.popi8,
-.popi9,
-.popi10,
-.popi11,
-.popi12,
-.popi13,
-.popi14,
-.popi15,
-.popi16,
-.popi17,
-.popi18,
-.popi19 {
-    /* height: 31.6px; */
+.popularLine {
     font-size: 18px;
     border: 1px solid;
     position: relative;
     margin: 0px;
     cursor: pointer;
     border-color: black transparent transparent transparent;
+    display: grid;
+    grid-template-columns: 40% 20% 20% 20%;
+}
 
+.popularLine p {
+    padding: 9px 18px 9px 18px;
+    margin: 0px;
 }
 
 .popimg2 {
