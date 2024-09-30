@@ -152,6 +152,20 @@ let nikeDunks = [{
     priceCents: 29000
 }];
 
+let blogPosts = [{
+    id: 1,
+    title: "Introducing our new NYC store",
+    text: "New York Citys shopping landscape is about to get a fresh burst of style with the grand opening of Kicks! Perfectly situated at 123 Fashion Avenu..."
+}, {
+    id: 2,
+    title: "New sneaker brands to watch out for",
+    text: "At Kicks, we're always on the lookout for the next big thing in footwear. While classic brands have their charm, there's something exciting about ..."
+}, {
+    id: 3,
+    title: "Latest drops",
+    text: "Welcome to Kicks Ltd, where we're excited to showcase our latest collection of Nike Air sneakers! Whether you're a seasoned sneakerhead or just lo..."
+}];
+
 function generateHTML(elemntClass, array, elemntFunction) {
     let HTML = ``;
     array.forEach((item) => {
@@ -185,8 +199,20 @@ const popularHTML = (item) => `
         <p>${item.brand}</p>
         <p>$ ${((Number(item.priceCents))/100)}</p>
       </div>
-        `
+        `;
+const blogHTML = (item) => `
+<div class="blogitem">
+<div class="blogimg${item.id}"></div>
+<div class="item-text">
+  <span class="title">${item.title}</span>
+  <span class="artc">${item.text}</span>
+  <button class="but">Read more</button>
+</div>
+</div>
+    `
+const shopHTML
 
 generateHTML('.latestArrivals', latestArrivals, latestArrivalsHTML);
 generateHTML('.list', popular, popularHTML);
 generateHTML('.nikeDunks', nikeDunks, nikeDunksHTML)
+generateHTML('.blogall', blogPosts, blogHTML)
