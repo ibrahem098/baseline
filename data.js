@@ -165,6 +165,11 @@ let blogPosts = [{
     title: "Latest drops",
     text: "Welcome to Kicks Ltd, where we're excited to showcase our latest collection of Nike Air sneakers! Whether you're a seasoned sneakerhead or just lo..."
 }];
+let shop = [{
+    title: 'Nike Dunk'
+}, {
+    title: 'Air Jordan'
+}]
 
 function generateHTML(elemntClass, array, elemntFunction) {
     let HTML = ``;
@@ -210,9 +215,14 @@ const blogHTML = (item) => `
 </div>
 </div>
     `
-const shopHTML
+const shopHTML = (item) => `
+    <div class="${item.title}">
+      <span>Shop ${item.title}</span>
+    </div>
+`
 
 generateHTML('.latestArrivals', latestArrivals, latestArrivalsHTML);
 generateHTML('.list', popular, popularHTML);
 generateHTML('.nikeDunks', nikeDunks, nikeDunksHTML)
 generateHTML('.blogall', blogPosts, blogHTML)
+generateHTML('.shop', shop, shopHTML)

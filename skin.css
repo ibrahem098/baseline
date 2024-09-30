@@ -490,8 +490,8 @@ nav img {
     display: flex;
 }
 
-.dunk,
-.jordan {
+.Dunk,
+.Jordan {
     cursor: pointer;
     width: 50%;
     height: 719.5px;
@@ -500,14 +500,14 @@ nav img {
     border-color: transparent transparent black black;
 }
 
-.dunk {
+.Dunk {
 
     background-image: url(media/shop/dunk.jpg);
     background-size: cover;
 
 }
 
-.jordan {
+.Jordan {
 
     background-image: url(media/shop/jordan.jpg);
     background-size: contain;
