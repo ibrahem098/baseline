@@ -169,7 +169,67 @@ let shop = [{
     title: 'Nike Dunk'
 }, {
     title: 'Air Jordan'
-}]
+}];
+let jordanScrollbar = [{
+    id: 1,
+    collection: 1,
+    title: 'Jordan 11 Cherry',
+    fileExtention: '.webp'
+}, {
+    id: 2,
+    collection: 1,
+    title: 'Air Jordan 1 High Unc Toe',
+    fileExtention: '.avif'
+}, {
+    id: 3,
+    collection: 1,
+    title: 'Air Jordan 4 Lightning',
+    fileExtention: '.avif'
+}, {
+    id: 4,
+    collection: 1,
+    title: 'Air Jordan 1 High Dark Mocha',
+    fileExtention: '.avif'
+}, {
+    id: 5,
+    collection: 1,
+    title: 'Air Jordan 1 High Bred',
+    fileExtention: '.avif'
+}];
+let nikeScrollbar = [{
+    id: 5,
+    collection: 2,
+    title: 'Nike Dunk Low Wmns Next Nature Mint',
+    fileExtention: '.webp'
+}, {
+    id: 4,
+    collection: 2,
+    title: 'Nike Dubnk Low Jackie Robinson',
+    fileExtention: '.webp'
+}, {
+    id: 3,
+    collection: 2,
+    title: 'Nike Air Force 1 Low Clot Fragment Black Silk',
+    fileExtention: '.webp'
+}, {
+    id: 2,
+    collection: 2,
+    title: 'Nike Blazer Mid Sacai White Grey',
+    fileExtention: '.webp'
+}, {
+    id: 1,
+    collection: 2,
+    title: 'Nike Air More Uptempo Supreme Gold',
+    fileExtention: '.webp'
+}];
+let alerts = [
+    [{
+        alertMsg: '• Free shipping on all orders over $100 '
+    }],
+    [{
+        alertMsg: 'New Dunks and Air Jordan have dropped. Get in quick before you miss out.—'
+    }]
+]
 
 function generateHTML(elemntClass, array, elemntFunction) {
     let HTML = ``;
@@ -221,8 +281,25 @@ const shopHTML = (item) => `
     </div>
 `
 
+const ScrollbarHTML = (item) => `
+      <span>•</span>
+      <img class="line-img" src="media/lines/line ${item.collection}/${item.id}${item.fileExtention}" />
+      <span>${item.title}</span>
+`;
+
+const newdroppsHTML = (item) => `
+<span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span>
+<span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span>
+<span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span>
+<span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span>
+`
+
 generateHTML('.latestArrivals', latestArrivals, latestArrivalsHTML);
 generateHTML('.list', popular, popularHTML);
 generateHTML('.nikeDunks', nikeDunks, nikeDunksHTML)
 generateHTML('.blogall', blogPosts, blogHTML)
 generateHTML('.shop', shop, shopHTML)
+generateHTML('.freefly2', jordanScrollbar, ScrollbarHTML)
+generateHTML('.freefly3', nikeScrollbar, ScrollbarHTML)
+generateHTML('.newsline', alerts[1], newdroppsHTML)
+generateHTML('.freefly', alerts[0], newdroppsHTML)
