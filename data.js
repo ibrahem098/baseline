@@ -1,4 +1,4 @@
-export let popular = [{
+let popular = [{
     id: 1,
     title: 'Air Jordan 1 High Bleached Coral',
     priceCents: 52000,
@@ -170,6 +170,7 @@ let shop = [{
 }, {
     title: 'Air Jordan'
 }];
+
 let jordanScrollbar = [{
     id: 1,
     collection: 1,
@@ -196,6 +197,7 @@ let jordanScrollbar = [{
     title: 'Air Jordan 1 High Bred',
     fileExtention: '.avif'
 }];
+
 let nikeScrollbar = [{
     id: 5,
     collection: 2,
@@ -222,6 +224,7 @@ let nikeScrollbar = [{
     title: 'Nike Air More Uptempo Supreme Gold',
     fileExtention: '.webp'
 }];
+
 let alerts = [
     [{
         alertMsg: '• Free shipping on all orders over $100 '
@@ -238,6 +241,7 @@ function generateHTML(elemntClass, array, elemntFunction) {
     });
     document.querySelector(elemntClass).innerHTML = HTML;
 }
+
 const nikeDunksHTML = (item) => `
     <div>
       <div class="nkpic${item.id}"></div>
@@ -245,8 +249,8 @@ const nikeDunksHTML = (item) => `
         <p class="latitle">${item.title}</p>
         <p class="laprice">$${(item.priceCents)/100}</p>
       </div>
-    </div>
-`
+    </div>`
+
 const latestArrivalsHTML = (item) => `
     <div class="la1 latestArrival">
       <div class="lapic${item.id}"></div>
@@ -254,8 +258,8 @@ const latestArrivalsHTML = (item) => `
         <p class="latitle">${item.title}</p>
         <p class="laprice">$${item.priceCents/100}</p>
       </div>
-    </div>
-`;
+    </div>`
+
 const popularHTML = (item) => `
     <div class="popularLine popi${item.id}">
         <div class="pop${item.id}"></div>
@@ -263,8 +267,8 @@ const popularHTML = (item) => `
         <p>${item.style}</p>
         <p>${item.brand}</p>
         <p>$ ${((Number(item.priceCents))/100)}</p>
-      </div>
-        `;
+      </div>`
+
 const blogHTML = (item) => `
 <div class="blogitem">
 <div class="blogimg${item.id}"></div>
@@ -273,26 +277,23 @@ const blogHTML = (item) => `
   <span class="artc">${item.text}</span>
   <button class="but">Read more</button>
 </div>
-</div>
-    `
+</div>`
+
 const shopHTML = (item) => `
     <div class="${item.title}">
       <span>Shop ${item.title}</span>
-    </div>
-`
+    </div>`
 
 const ScrollbarHTML = (item) => `
       <span>•</span>
       <img class="line-img" src="media/lines/line ${item.collection}/${item.id}${item.fileExtention}" />
-      <span>${item.title}</span>
-`;
+      <span>${item.title}</span>`
 
 const newdroppsHTML = (item) => `
 <span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span>
 <span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span>
 <span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span>
-<span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span>
-`
+<span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span>`
 
 generateHTML('.latestArrivals', latestArrivals, latestArrivalsHTML);
 generateHTML('.list', popular, popularHTML);
