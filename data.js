@@ -1,4 +1,4 @@
-let popular = [{
+export let popular = [{
     id: 1,
     title: 'Air Jordan 1 High Bleached Coral',
     priceCents: 52000,
@@ -108,7 +108,7 @@ let popular = [{
     style: 'VNOVFB9QS'
 }];
 
-let latestArrivals = [{
+export let latestArrivals = [{
     id: 1,
     title: 'New Balance 990V6 Action Bronson Lapis Lazuli',
     priceCents: 58000
@@ -130,7 +130,7 @@ let latestArrivals = [{
     priceCents: 240000
 }]
 
-let nikeDunks = [{
+export let nikeDunks = [{
     id: 1,
     title: "Nike Air More Uptempo Supreme Gold",
     priceCents: 52000
@@ -152,7 +152,7 @@ let nikeDunks = [{
     priceCents: 29000
 }];
 
-let blogPosts = [{
+export let blogPosts = [{
     id: 1,
     title: "Introducing our new NYC store",
     text: "New York Citys shopping landscape is about to get a fresh burst of style with the grand opening of Kicks! Perfectly situated at 123 Fashion Avenu..."
@@ -165,13 +165,13 @@ let blogPosts = [{
     title: "Latest drops",
     text: "Welcome to Kicks Ltd, where we're excited to showcase our latest collection of Nike Air sneakers! Whether you're a seasoned sneakerhead or just lo..."
 }];
-let shop = [{
+export let shop = [{
     title: 'Nike Dunk'
 }, {
     title: 'Air Jordan'
 }];
 
-let jordanScrollbar = [{
+export let jordanScrollbar = [{
     id: 1,
     collection: 1,
     title: 'Jordan 11 Cherry',
@@ -198,7 +198,7 @@ let jordanScrollbar = [{
     fileExtention: '.avif'
 }];
 
-let nikeScrollbar = [{
+export let nikeScrollbar = [{
     id: 5,
     collection: 2,
     title: 'Nike Dunk Low Wmns Next Nature Mint',
@@ -225,7 +225,7 @@ let nikeScrollbar = [{
     fileExtention: '.webp'
 }];
 
-let alerts = [
+export let alerts = [
     [{
         alertMsg: '• Free shipping on all orders over $100 '
     }],
@@ -233,74 +233,3 @@ let alerts = [
         alertMsg: 'New Dunks and Air Jordan have dropped. Get in quick before you miss out.—'
     }]
 ]
-
-function generateHTML(elemntClass, array, elemntFunction) {
-    let HTML = ``;
-    array.forEach((item) => {
-        HTML += elemntFunction(item);
-    });
-    document.querySelector(elemntClass).innerHTML = HTML;
-}
-
-const nikeDunksHTML = (item) => `
-    <div>
-      <div class="nkpic${item.id}"></div>
-      <div class="ladata">
-        <p class="latitle">${item.title}</p>
-        <p class="laprice">$${(item.priceCents)/100}</p>
-      </div>
-    </div>`
-
-const latestArrivalsHTML = (item) => `
-    <div class="la1 latestArrival">
-      <div class="lapic${item.id}"></div>
-      <div class="ladata">
-        <p class="latitle">${item.title}</p>
-        <p class="laprice">$${item.priceCents/100}</p>
-      </div>
-    </div>`
-
-const popularHTML = (item) => `
-    <div class="popularLine popi${item.id}">
-        <div class="pop${item.id}"></div>
-        <p class="ptitle">${item.title}</p>
-        <p>${item.style}</p>
-        <p>${item.brand}</p>
-        <p>$ ${((Number(item.priceCents))/100)}</p>
-      </div>`
-
-const blogHTML = (item) => `
-<div class="blogitem">
-<div class="blogimg${item.id}"></div>
-<div class="item-text">
-  <span class="title">${item.title}</span>
-  <span class="artc">${item.text}</span>
-  <button class="but">Read more</button>
-</div>
-</div>`
-
-const shopHTML = (item) => `
-    <div class="${item.title}">
-      <span>Shop ${item.title}</span>
-    </div>`
-
-const ScrollbarHTML = (item) => `
-      <span>•</span>
-      <img class="line-img" src="media/lines/line ${item.collection}/${item.id}${item.fileExtention}" />
-      <span>${item.title}</span>`
-
-const newdroppsHTML = (item) => `
-<span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span>
-<span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span>
-<span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span>
-<span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span><span>${item.alertMsg}</span>`
-
-generateHTML('.latestArrivals', latestArrivals, latestArrivalsHTML);
-generateHTML('.list', popular, popularHTML);
-generateHTML('.nikeDunks', nikeDunks, nikeDunksHTML)
-generateHTML('.blogall', blogPosts, blogHTML)
-generateHTML('.shop', shop, shopHTML)
-generateHTML('.freefly2', jordanScrollbar, ScrollbarHTML)
-generateHTML('.freefly3', nikeScrollbar, ScrollbarHTML)
-generateHTML('.newsline', alerts[1], newdroppsHTML)
-generateHTML('.freefly', alerts[0], newdroppsHTML)
